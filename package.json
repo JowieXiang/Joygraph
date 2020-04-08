@@ -1,0 +1,22 @@
+{
+  "name": "Joy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "jsDocDoclet": "node tasks/jsdoc_doclet.js",
+    "jsDocTemplate": "node tasks/jsdoc_template.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "child-process-promise": "^2.2.1",
+    "jaguarjs-jsdoc": "^1.1.0",
+    "jsdoc": "^3.6.3",
+    "jsdom": "^16.2.2",
+    "lodash": "^4.17.15",
+    "mxgraph": "^4.1.1"
+  }
+}

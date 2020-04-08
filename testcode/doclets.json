@@ -1,0 +1,572 @@
+[
+    {
+        "comment": "/**\n * Class representing a dot. Requires the modules \n * {@link module:Point}\n * @requires module:Point\n * @extends Point\n */",
+        "meta": {
+            "range": [
+                158,
+                573
+            ],
+            "filename": "dot.js",
+            "lineno": 8,
+            "columnno": 0,
+            "path": "/home/jowie/Desktop/JoyJS/Joy/testcode",
+            "code": {
+                "id": "astnode100000002",
+                "name": "Dot",
+                "type": "ClassDeclaration",
+                "paramnames": [
+                    "x",
+                    "y",
+                    "width"
+                ]
+            }
+        },
+        "classdesc": "Class representing a dot. Requires the modules \n{@link module:Point}",
+        "requires": [
+            "module:Point"
+        ],
+        "augments": [
+            "Point"
+        ],
+        "name": "Dot",
+        "longname": "Dot",
+        "kind": "class",
+        "scope": "global",
+        "undocumented": true
+    },
+    {
+        "comment": "/**\n     * Create a dot.\n     * @param {number} x - The x value.\n     * @param {number} y - The y value.\n     * @param {number} width - The width of the dot, in pixels.\n     * @constructor\n     */",
+        "meta": {
+            "range": [
+                389,
+                436
+            ],
+            "filename": "dot.js",
+            "lineno": 16,
+            "columnno": 4,
+            "path": "/home/jowie/Desktop/JoyJS/Joy/testcode",
+            "code": {
+                "id": "astnode100000006",
+                "name": "Dot",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "x",
+                    "y",
+                    "width"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "description": "Create a dot.",
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "number"
+                    ]
+                },
+                "description": "The x value.",
+                "name": "x"
+            },
+            {
+                "type": {
+                    "names": [
+                        "number"
+                    ]
+                },
+                "description": "The y value.",
+                "name": "y"
+            },
+            {
+                "type": {
+                    "names": [
+                        "number"
+                    ]
+                },
+                "description": "The width of the dot, in pixels.",
+                "name": "width"
+            }
+        ],
+        "kind": "class",
+        "name": "Dot",
+        "longname": "Dot",
+        "scope": "global",
+        "undocumented": true
+    },
+    {
+        "comment": "/**\n     * Create a dot.\n     * @param {number} x - The x value.\n     * @param {number} y - The y value.\n     * @param {number} width - The width of the dot, in pixels.\n     * @constructor\n     */",
+        "meta": {
+            "range": [
+                389,
+                436
+            ],
+            "filename": "dot.js",
+            "lineno": 16,
+            "columnno": 4,
+            "path": "/home/jowie/Desktop/JoyJS/Joy/testcode",
+            "code": {
+                "id": "astnode100000006",
+                "name": "Dot",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "x",
+                    "y",
+                    "width"
+                ]
+            }
+        },
+        "name": "Dot",
+        "longname": "Dot",
+        "kind": "class",
+        "description": "Create a dot.",
+        "scope": "global",
+        "classdesc": "Class representing a dot. Requires the modules \n{@link module:Point}",
+        "requires": [
+            "module:Point"
+        ],
+        "augments": [
+            "Point"
+        ],
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "number"
+                    ]
+                },
+                "description": "The x value.",
+                "name": "x"
+            },
+            {
+                "type": {
+                    "names": [
+                        "number"
+                    ]
+                },
+                "description": "The y value.",
+                "name": "y"
+            },
+            {
+                "type": {
+                    "names": [
+                        "number"
+                    ]
+                },
+                "description": "The width of the dot, in pixels.",
+                "name": "width"
+            }
+        ]
+    },
+    {
+        "comment": "/**\n     * Get the dot's width.\n     * @return {number} The dot's width, in pixels.\n     */",
+        "meta": {
+            "range": [
+                538,
+                571
+            ],
+            "filename": "dot.js",
+            "lineno": 24,
+            "columnno": 4,
+            "path": "/home/jowie/Desktop/JoyJS/Joy/testcode",
+            "code": {
+                "id": "astnode100000013",
+                "name": "Dot#getWidth",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "description": "Get the dot's width.",
+        "returns": [
+            {
+                "type": {
+                    "names": [
+                        "number"
+                    ]
+                },
+                "description": "The dot's width, in pixels."
+            }
+        ],
+        "name": "getWidth",
+        "longname": "Dot#getWidth",
+        "kind": "function",
+        "memberof": "Dot",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/** Class representing a point. */",
+        "meta": {
+            "range": [
+                35,
+                701
+            ],
+            "filename": "point.js",
+            "lineno": 2,
+            "columnno": 0,
+            "path": "/home/jowie/Desktop/JoyJS/Joy/testcode",
+            "code": {
+                "id": "astnode100000019",
+                "name": "Point",
+                "type": "ClassDeclaration",
+                "paramnames": [
+                    "x",
+                    "y"
+                ]
+            }
+        },
+        "classdesc": "Class representing a point.",
+        "name": "Point",
+        "longname": "Point",
+        "kind": "class",
+        "scope": "global",
+        "undocumented": true
+    },
+    {
+        "comment": "/**\n     * Create a point.\n     * @param {number} x - The x value.\n     * @param {number} y - The y value.\n     */",
+        "meta": {
+            "range": [
+                172,
+                212
+            ],
+            "filename": "point.js",
+            "lineno": 8,
+            "columnno": 4,
+            "path": "/home/jowie/Desktop/JoyJS/Joy/testcode",
+            "code": {
+                "id": "astnode100000022",
+                "name": "Point",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "x",
+                    "y"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "description": "Create a point.",
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "number"
+                    ]
+                },
+                "description": "The x value.",
+                "name": "x"
+            },
+            {
+                "type": {
+                    "names": [
+                        "number"
+                    ]
+                },
+                "description": "The y value.",
+                "name": "y"
+            }
+        ],
+        "name": "Point",
+        "longname": "Point",
+        "kind": "class",
+        "scope": "global",
+        "undocumented": true
+    },
+    {
+        "comment": "/**\n     * Create a point.\n     * @param {number} x - The x value.\n     * @param {number} y - The y value.\n     */",
+        "meta": {
+            "range": [
+                172,
+                212
+            ],
+            "filename": "point.js",
+            "lineno": 8,
+            "columnno": 4,
+            "path": "/home/jowie/Desktop/JoyJS/Joy/testcode",
+            "code": {
+                "id": "astnode100000022",
+                "name": "Point",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "x",
+                    "y"
+                ]
+            }
+        },
+        "name": "Point",
+        "longname": "Point",
+        "kind": "class",
+        "description": "Create a point.",
+        "scope": "global",
+        "classdesc": "Class representing a point.",
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "number"
+                    ]
+                },
+                "description": "The x value.",
+                "name": "x"
+            },
+            {
+                "type": {
+                    "names": [
+                        "number"
+                    ]
+                },
+                "description": "The y value.",
+                "name": "y"
+            }
+        ]
+    },
+    {
+        "comment": "/**\n     * Get the x value.\n     * @return {number} The x value.\n     */",
+        "meta": {
+            "range": [
+                295,
+                324
+            ],
+            "filename": "point.js",
+            "lineno": 16,
+            "columnno": 4,
+            "path": "/home/jowie/Desktop/JoyJS/Joy/testcode",
+            "code": {
+                "id": "astnode100000028",
+                "name": "Point#getX",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "description": "Get the x value.",
+        "returns": [
+            {
+                "type": {
+                    "names": [
+                        "number"
+                    ]
+                },
+                "description": "The x value."
+            }
+        ],
+        "name": "getX",
+        "longname": "Point#getX",
+        "kind": "function",
+        "memberof": "Point",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\n     * Get the y value.\n     * @return {number} The y value.\n     */",
+        "meta": {
+            "range": [
+                407,
+                436
+            ],
+            "filename": "point.js",
+            "lineno": 24,
+            "columnno": 4,
+            "path": "/home/jowie/Desktop/JoyJS/Joy/testcode",
+            "code": {
+                "id": "astnode100000032",
+                "name": "Point#getY",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "description": "Get the y value.",
+        "returns": [
+            {
+                "type": {
+                    "names": [
+                        "number"
+                    ]
+                },
+                "description": "The y value."
+            }
+        ],
+        "name": "getY",
+        "longname": "Point#getY",
+        "kind": "function",
+        "memberof": "Point",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\n     * Convert a string containing two comma-separated numbers into a point.\n     * @param {string} str - The string containing two comma-separated numbers.\n     * @return {Point} A Point object.\n     */",
+        "meta": {
+            "range": [
+                654,
+                699
+            ],
+            "filename": "point.js",
+            "lineno": 33,
+            "columnno": 4,
+            "path": "/home/jowie/Desktop/JoyJS/Joy/testcode",
+            "code": {
+                "id": "astnode100000036",
+                "name": "Point.fromString",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "str"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "description": "Convert a string containing two comma-separated numbers into a point.",
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "string"
+                    ]
+                },
+                "description": "The string containing two comma-separated numbers.",
+                "name": "str"
+            }
+        ],
+        "returns": [
+            {
+                "type": {
+                    "names": [
+                        "Point"
+                    ]
+                },
+                "description": "A Point object."
+            }
+        ],
+        "name": "fromString",
+        "longname": "Point.fromString",
+        "kind": "function",
+        "memberof": "Point",
+        "scope": "static"
+    },
+    {
+        "comment": "/** exports the point class */",
+        "meta": {
+            "range": [
+                733,
+                754
+            ],
+            "filename": "point.js",
+            "lineno": 38,
+            "columnno": 0,
+            "path": "/home/jowie/Desktop/JoyJS/Joy/testcode",
+            "code": {
+                "id": "astnode100000042",
+                "name": "exports.point",
+                "type": "Identifier",
+                "value": "Point",
+                "paramnames": []
+            }
+        },
+        "description": "exports the point class",
+        "name": "point",
+        "longname": "point",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "kind": "package",
+        "longname": "package:undefined",
+        "files": [
+            "/home/jowie/Desktop/JoyJS/Joy/testcode/dot.js",
+            "/home/jowie/Desktop/JoyJS/Joy/testcode/point.js"
+        ]
+    },
+    {
+        "comment": "/**\n     * Get the x value.\n     * @return {number} The x value.\n     */",
+        "meta": {
+            "range": [
+                295,
+                324
+            ],
+            "filename": "point.js",
+            "lineno": 16,
+            "columnno": 4,
+            "path": "/home/jowie/Desktop/JoyJS/Joy/testcode",
+            "code": {
+                "id": "astnode100000028",
+                "name": "Point#getX",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "getX",
+        "longname": "Dot#getX",
+        "kind": "function",
+        "description": "Get the x value.",
+        "returns": [
+            {
+                "type": {
+                    "names": [
+                        "number"
+                    ]
+                },
+                "description": "The x value."
+            }
+        ],
+        "memberof": "Dot",
+        "scope": "instance",
+        "inherits": "Point#getX",
+        "inherited": true,
+        "overrides": "Point#getX"
+    },
+    {
+        "comment": "/**\n     * Get the y value.\n     * @return {number} The y value.\n     */",
+        "meta": {
+            "range": [
+                407,
+                436
+            ],
+            "filename": "point.js",
+            "lineno": 24,
+            "columnno": 4,
+            "path": "/home/jowie/Desktop/JoyJS/Joy/testcode",
+            "code": {
+                "id": "astnode100000032",
+                "name": "Point#getY",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "getY",
+        "longname": "Dot#getY",
+        "kind": "function",
+        "description": "Get the y value.",
+        "returns": [
+            {
+                "type": {
+                    "names": [
+                        "number"
+                    ]
+                },
+                "description": "The y value."
+            }
+        ],
+        "memberof": "Dot",
+        "scope": "instance",
+        "inherits": "Point#getY",
+        "inherited": true,
+        "overrides": "Point#getY"
+    }
+]
