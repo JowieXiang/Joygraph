@@ -1,0 +1,41 @@
+<table class="table table-hover">
+    <tr>
+        <!-- <th scope="col">#</th> -->
+        <th scope="col">Art der Infrastruktur</th>
+        <th scope="col">Menge</th>
+    </tr>
+    <% _.each(dataObj.layers, function(layer, i){ %>
+    <tr class="dashboard-tr">
+        <!-- <th scope="row"><%= i + 1 %></th> -->
+        <td scope="row"><%= layer.layerName %></td>
+        <td><%= layer.features.length %>
+            <button id="<%= layer.layerName.split(' ')[0] %>" type="button"
+                class="btn btn-outline-secondary open"><span></span></button></td>
+    </tr>
+    <tr id="<%= layer.layerName.split(' ')[0] + '_tr' %>" class="detail">
+        <td colspan="3">
+            <p>
+                <% _.each(layer.features, function(feature){ %>
+                <span class="name-tag district-name zoom-to-coord" coord="<%= feature.get('coord').join(',') %>">
+                    <%= feature.getProperties()[layer.idSelector] %>
+                </span>
+                <% }) %>
+            </p>
+        </td>
+    </tr>
+    <% }) %>
+</table>
+<table>
+    <tr>
+        <td>
+            <button class="btn btn-lgv-grey measure-delete isochrone-origin" value=<%= dataObj.coordinate %>>
+                zoom
+            </button>
+        </td>
+        <td id="dashboard-container">
+            <button type="button" class="btn btn-lgv-grey measure-delete" id="show-in-dashboard">
+                Im Dashboard anzeigen
+            </button>
+        </td>
+    </tr>
+</table>

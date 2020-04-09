@@ -1,0 +1,242 @@
+@color_1: #fff;
+@font_family_1: "UniversNextW04-620CondB","Arial Narrow",Arial,sans-serif;
+@background_color_1: rgba(0, 0, 0,.5);
+
+.dashboard-table {
+    .head-bar, .table-footer {
+        width: 100%;
+        border-bottom: 1px solid rgb(229,229,229);
+        padding: 10px 0;
+        z-index: 100;
+        .filter {
+            width: 40%;
+            min-width: 320px;
+            float: right;
+            display: flex;
+            justify-content: flex-end;
+            .filter-dropdown {
+                width:100%;
+            }
+            .dropdown-container {
+                padding: 0;
+                .dropdown-toggle {
+                    line-height: 14px;
+                }
+            }
+            .btn-reset {
+                display: inline-block;
+                height: 26px;
+            }
+        }
+
+        #correlation-button {
+            width:100%;
+        }
+
+        .export-button {
+            display: inline-block;
+        }
+    }
+    .figure {
+        overflow:auto;
+        button.open {
+            float:right;
+            padding: 12px;
+            position: relative;
+            background-color: transparent;
+            border: 1px solid lightgrey;
+            border-radius: 4px;
+            span {
+                border-right: 1px solid lightgrey;
+                border-bottom: 1px solid lightgrey;
+                width: 9px;
+                height: 9px;
+                position: absolute;
+                top: 5px;
+                left: 8px;
+                transform: rotate(45deg);
+                pointer-events: none;
+            }
+        }
+    }
+    .simple-views-container {
+        .btn-default {
+            &:focus {
+                outline: none;
+            }
+        }
+        padding: 8px 0px;
+        width: 100%;
+        border-bottom: 1px solid rgb(229, 229, 229);
+        table {
+            width: calc(100% - 8px);
+            thead tr {
+                background: rgb(250, 250, 250);
+            }
+            tbody {
+                display: none;
+                &.open {
+                    display: table-row-group;
+                }
+            }
+            th, td {
+                width: auto;
+                position: relative;
+                border-right: 1px solid rgb(229, 229, 229);
+                &.prop {
+                    font-weight: 300;
+                }
+                &.years {
+                    font-weight: 300;
+                }
+                &.district {
+                    cursor: pointer;
+                }
+                &:hover {
+                    background: rgb(199, 199, 199);
+                    .move {
+                        visibility: visible;
+                    }
+                }
+                &.minimized {
+                    width: 8px;
+                    *:not(.toggle-col) {
+                        display: none;
+                    }
+                }
+                .move {
+                    visibility: hidden;
+                    position: absolute;
+                    top: 0;
+                    left: 5px;
+                    span {
+                        color: lightgrey;
+                        &:hover {
+                            color:darkblue;
+                            cursor: pointer;
+                        }
+                    }
+                }
+                .toggle-col {
+                    display: block;
+                    position: absolute;
+                    top: -2px;
+                    right: 0;
+                    width: 10px;
+                    height: 10px;
+                    transform: rotate(-45deg);
+                    color: lightgrey;
+                    &:hover {
+                        color:darkblue;
+                        cursor: pointer;
+                    }
+                }
+                ul.list-group {
+                    padding:0;
+                    li.list-group-item.nowrap {
+                        background-color: transparent;
+                        text-align: right;
+                        border-bottom: 0px transparent;
+                        border-right: 0px transparent;
+                        border-left: 0px transparent;
+                        white-space: nowrap;
+                        padding: 5px 0;
+                        &:first-child {
+                            border-top: 0px transparent;
+                            display: block !important;
+                        }
+                        &:not(:first-child) {
+                            display:none;
+                        }
+                        small {
+                            color: #90c6f5;
+                        }
+                    }
+                }
+            }
+        }
+        tr {
+            &:before {
+                display:none;
+            }
+            &.open {
+                .timeline-table {
+                    ul {
+                        li {
+                            display:block !important;
+                        }
+                    }
+                }
+                button.open {
+                    transform: rotate(180deg);
+                }
+            }
+            &:hover {
+                background: rgb(245, 245, 245);   
+            }
+            &.selected {
+                td, th {
+                    background: #3399CC;
+                    color: white;
+                    small {
+                        color: rgb(155, 222, 255) !important;
+                    }
+                }
+                td {
+                    &:hover {
+                        background: rgb(54, 129, 167);
+                    }
+                }
+            }
+        }
+    }
+    .tool-name {
+        padding-left: 15px;
+        font-family: @font_family_1;
+        font-size: 16px;
+    }
+    .simple-view {
+        .btn-default {
+            margin: 4px;
+        }
+    }
+    .btn-select {
+        color: @color_1;
+        background-color: @background_color_1;
+        .name {
+            &:hover {
+                font-weight: normal;
+            }
+        }
+    }
+}
+.simple-view {
+    display: inline-block;
+}
+.detail-view-container {
+    padding: 8px 15px;
+    width: 100%;
+    border-bottom: 1px solid rgb(229, 229, 229);
+    .dashboard-graph {
+        width:100%;
+        height:40vh;
+    }
+    .graphTooltip {
+        position: fixed;
+        pointer-events: none;
+    }
+}
+@media (min-width: 768px) {
+    .filter {
+        .simple-views-container {
+            button {
+                padding: 5px 10px;
+                font-size: 12px;
+                line-height: 1.5;
+            }
+        }
+        .head-bar {
+            padding: 10px;
+        }
+    }
+}

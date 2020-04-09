@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<div class="btn-group header">
+    <span class="glyphicon <%=glyphicon%>"></span>
+    <span class="tool-name"><%= name %></span>
+
+    <% if (isVisibleInMenu === true) { %>
+    <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <% } %>
+</div>
+<% if (queryCollection.length === 0) { %>
+<div class="value-views-container">
+    <div class="text" style="display: block;">
+        Sie haben keine filterbaren Themen aktiviert. <br />
+        Bitte schalten sie min. ein Thema ein!
+    </div>
+</div>
+<% } %>
+<div class="simple-views-container"></div>
+<div class="detail-view-container"></div>
+<div class="result-view-container"></div>

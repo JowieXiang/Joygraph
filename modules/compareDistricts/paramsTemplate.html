@@ -1,0 +1,20 @@
+<% _.each(layerFilterList, function (layerFilter) { %>
+    <p><strong><%= layerFilter.get("layerInfo").layerText.value %></strong></p>
+        <table class="table">
+            <tr>
+                <th scope="col">Jahr</th>
+                <th scope="col">Referenzwert</th>
+                <th scope="col">-</th>
+                <th scope="col">+</th>
+            </tr>
+            <% filters = JSON.parse(layerFilter.get("filter")); %>
+            <% _.each( Object.keys(filters), function (key) { %>
+            <tr>
+                <td><%= key %></td>
+                <td><%= layerFilter.get("districtInfo").filter(function(item){ return item.key === key; })[0].value %></td>
+                <td><%= filters[key][0] %></td>
+                <td><%= filters[key][1] %></td>
+            </tr>
+            <% }) %>
+        </table>
+<% }) %>

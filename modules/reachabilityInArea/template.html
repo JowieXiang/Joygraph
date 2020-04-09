@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<div class="service-coverage">
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label class="col-sm-3">Thema</label>
+            <div class="col-sm-9" id="select-layer">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3">Verkehrsmittel</label>
+            <div class="col-sm-9">
+                <select class="form-control input-sm" title="Verkehrsmittel" id="path-type">
+                    <option selected value=""> -Leeren- </option>
+                    <option value="driving-car">Auto</option>
+                    <option value="cycling-regular">Rad</option>
+                    <option value="cycling-electric">Rad (elektrisch)</option>
+                    <option value="foot-walking">Gehen</option>
+                    <option value="wheelchair">Rollstuhl</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3">Maßeinheit der Entfernung</label>
+            <div class="col-sm-9">
+                <select class="form-control input-sm" title="Maßeinheit der Entfernung" id="range-type">
+                    <option selected value=""> -Leeren- </option>
+                    <option value="time">Zeit (in min)</option>
+                    <option value="distance">Entfernung (in m)</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3">Entfernung</label>
+            <div class="col-sm-9">
+                <input class="form-control input-sm" title="Entfernung" id="range" type="number" min="0">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-5">
+                <button type="button" class="btn btn-lgv-grey" id="create-isochrones">
+                    Berechnen
+                </button>
+            </div>
+            <div class="col-sm-1">
+                <div id="help">
+                    <span class="glyphicon glyphicon-question-sign"></span>
+                </div>
+            </div>
+            <div class="col-sm-1">
+                <div id="backward" title="Zurück zur Erreichbarkeitsanalyse">
+                    <span class="glyphicon glyphicon-arrow-left"></span>
+                </div>
+            </div>
+            <div class="col-sm-1">
+                <div id="clear" title="Lösche aktuelles Ergebnis">
+                    <span class="glyphicon glyphicon-trash"></span>
+                </div>
+            </div>
+        </div>
+    </form>
+    <hr />
+    <h5><strong>Legende - Zeit (in min): </strong></h5>
+    <div id="legend">
+    </div>
+</div>

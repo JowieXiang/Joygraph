@@ -1,0 +1,506 @@
+[
+  {
+    "category": "bev_insgesamt",
+    "value": "Bevölkerung insgesamt",
+    "group": "Bevölkerung",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "absolute"
+  },
+  {
+    "category": "bev_weiblich",
+    "value": "Bevölkerung weiblich",
+    "group": "Bevölkerung",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "absolute"
+  },
+  {
+    "category": "bev_maennlich",
+    "value": "Bevölkerung männlich",
+    "group": "Bevölkerung",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "absolute"
+  },
+  {
+    "category": "bev_u6",
+    "value": "Bevölkerung unter 6 Jahren",
+    "group": "Bevölkerung",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "absolute"
+  },
+  {
+    "category": "bev_u18",
+    "value": "Bevölkerung unter 18 Jahren",
+    "group": "Bevölkerung",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "absolute"
+  },
+  {
+    "category": "bev_10_bis_u15",
+    "value": "Bevölkerung 10 bis unter 15 Jahren",
+    "group": "Bevölkerung",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "absolute"
+  },
+  {
+    "category": "bev_15_bis_u21",
+    "value": "Bevölkerung 15 bis unter 21 Jahren",
+    "group": "Bevölkerung",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "absolute"
+  },
+  {
+    "category": "bev_15_bis_u65",
+    "value": "Bevölkerung 15 bis unter 65 Jahren",
+    "group": "Bevölkerung",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "absolute"
+  },
+  {
+    "category": "bev_21_bis_u45",
+    "value": "Bevölkerung 21 bis unter 45 Jahren",
+    "group": "Bevölkerung",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "absolute"
+  },
+  {
+    "category": "bev_45_bis_u65",
+    "value": "Bevölkerung 45 bis unter 65 Jahren",
+    "group": "Bevölkerung",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "absolute"
+  },
+  {
+    "category": "bev_6_bis_u10",
+    "value": "Bevölkerung 6 bis unter 10 Jahren",
+    "group": "Bevölkerung",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "absolute"
+  },
+  {
+    "category": "bev_ab65",
+    "value": "Bevölkerung ab 65 Jahren",
+    "group": "Bevölkerung",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "absolute"
+  },
+  {
+    "category": "bev_auslaender_anz",
+    "value": "Ausländer insgesamt",
+    "group": "Bevölkerung",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "absolute"
+  },
+  {
+    "category": "bev_auslaender_proz",
+    "value": "Anteil der Ausländer",
+    "group": "Bevölkerung",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "relative"
+  },
+  {
+    "category": "bev_migrationshintergrund_anz",
+    "value": "Bevölkerung mit Migrationshintergrund",
+    "group": "Bevölkerung",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "absolute"
+  },
+  {
+    "category": "bev_migrationshintergrund_proz",
+    "value": "Anteil der Bevölkerung mit Migrationshintergrund",
+    "group": "Bevölkerung",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "relative"
+  },
+  {
+    "category": "flaeche_brutto_ha",
+    "value": "Bruttofläche in ha",
+    "group": "Fläche",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "absolute"
+  },
+  {
+    "category": "flaeche_einw_pro_ha",
+    "value": "Einwohner je ha",
+    "group": "Fläche",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "absolute"
+  },
+  {
+    "category": "hau_alleinerziehende_anz",
+    "value": "Alleinerziehende",
+    "group": "Haushalte",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "absolute"
+  },
+  {
+    "category": "hau_alleinerziehende_proz",
+    "value": "Anteil der Alleinerziehenden",
+    "group": "Haushalte",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "relative"
+  },
+  {
+    "category": "hau_einpersonenhaushalte_anz",
+    "value": "Einpersonenhaushalte",
+    "group": "Haushalte",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "absolute"
+  },
+  {
+    "category": "hau_einpersonenhaushalte_proz",
+    "value": "Anteil der Einpersonenhaushalte",
+    "group": "Haushalte",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "relative"
+  },
+  {
+    "category": "hau_haushalte_mit_kindern_anz",
+    "value": "Haushalte mit Kindern",
+    "group": "Haushalte",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "absolute"
+  },
+  {
+    "category": "hau_haushalte_mit_kindern_proz",
+    "value": "Anteil der Haushalte mit Kindern",
+    "group": "Haushalte",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "relative"
+  },
+  {
+    "category": "hau_haushaltgroesse_avg",
+    "value": "Durchschnittliche Haushaltsgröße",
+    "group": "Haushalte",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "relative"
+  },
+  {
+    "category": "hau_privathaushalte_anz",
+    "value": "Privathaushalte",
+    "group": "Haushalte",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "absolute"
+  },
+  {
+    "category": "soz_sozverpflichtig_beschaeftigte_frauen_15_bis_u65_ant",
+    "value": "Anteil der Sozialversicherungspflichtig beschäftigten Frauen 15 bis unter 65 Jahren",
+    "group": "Sozialversicherungspflichtige",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "relative"
+  },
+  {
+    "category": "soz_sozverpflichtig_beschaeftigte_maenner_15_bis_u65_ant",
+    "value": "Anteil der Sozialversicherungspflichtig beschäftigten Männern 15 bis unter 65 Jahren",
+    "group": "Sozialversicherungspflichtige",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "relative"
+  },
+  {
+    "category": "soz_sozverpflichtig_beschaeftigte_15_bis_u65_ant",
+    "value": "Anteil der Sozialversicherungspflichtig Beschäftigten 15 bis unter 65 Jahren",
+    "group": "Sozialversicherungspflichtige",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "relative"
+  },
+  {
+    "category": "soz_sozverpflichtig_beschaeftigte_frauen",
+    "value": "Sozialversicherungspflichtig beschäftigte Frauen",
+    "group": "Sozialversicherungspflichtige",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "absolute"
+  },
+  {
+    "category": "soz_sozverpflichtig_beschaeftigte_ins_anz",
+    "value": "Sozialversicherungspflichtig Beschäftigte insgesamt",
+    "group": "Sozialversicherungspflichtige",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "absolute"
+  },
+  {
+    "category": "soz_sozverpflichtig_beschaeftigte_maenner",
+    "value": "Sozialversicherungspflichtig beschäftigte Männer",
+    "group": "Sozialversicherungspflichtige",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "absolute"
+  },
+  {
+    "category": "arb_alg2_empfaenger_15_bis_u65_proz",
+    "value": "Anteil der SGB II (Arbeitslosengeld II) Empfänger 15 bis unter 65 Jahren",
+    "group": "Arbeitslose",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "relative"
+  },
+  {
+    "category": "arb_alg2_empfaenger_insgesamt_anz",
+    "value": "SGB II (Arbeitlosengeld II) Empfänger insgesamt",
+    "group": "Arbeitslose",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "absolute"
+  },
+  {
+    "category": "arb_alg2_empfaenger_insgesamt_proz",
+    "value": "Anteil der SGB II (Arbeitslosengeld II) Empfänger insgesamt",
+    "group": "Arbeitslose",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "relative"
+  },
+  {
+    "category": "arb_alg_empfaenger_15_bis_u65_proz",
+    "value": "Anteil der SGB III (Arbeitslosengeld) Empfänger 15 bis unter 65 Jahren",
+    "group": "Arbeitslose",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "relative"
+  },
+  {
+    "category": "arb_alg_empfaenger_insgesamt_anz",
+    "value": "SGB III (Arbeitslosengeld) Empfänger insgesamt",
+    "group": "Arbeitslose",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "absolute"
+  },
+  {
+    "category": "arb_alg_empfaenger_insgesamt_proz",
+    "value": "Anteil der SGB III (Arbeitslosengeld) Empfänger insgesamt",
+    "group": "Arbeitslose",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "relative"
+  },
+  {
+    "category": "arb_arbeitslose_15_bis_u65_proz",
+    "value": "Anteil der Arbeitslosen 15 bis unter 65 Jahren",
+    "group": "Arbeitslose",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "relative"
+  },
+  {
+    "category": "arb_arbeitslose_ingesamt_anz",
+    "value": "Arbeitslose insgesamt",
+    "group": "Arbeitslose",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "absolute"
+  },
+  {
+    "category": "arb_arbeitslose_ingesamt_proz",
+    "value": "Anteil der Arbeitslosen",
+    "group": "Arbeitslose",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "relative"
+  },
+  {
+    "category": "sgb_anteil_an_bev_15_bis_u25_proz",
+    "value": "Anteil an der Bevölkerung 15 bis unter 25 Jahren",
+    "group": "SGB II Leistungen",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "relative"
+  },
+  {
+    "category": "sgb_anteil_an_bev_u15_proz",
+    "value": "Anteil an der Bevölkerung unter 15 Jahren",
+    "group": "SGB II Leistungen",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "relative"
+  },
+  {
+    "category": "sgb_anteil_an_der_auslaendischen_bev_erw_15_bis_u65_proz",
+    "value": "Anteil der ausländischen Bevölkerung 15 bis unter 65 Jahren",
+    "group": "SGB II Leistungen",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "relative"
+  },
+  {
+    "category": "sgb_anteil_an_der_bev_15_bis_u65_proz",
+    "value": "Anteil an der Bevölkerung 15 bis unter 65 Jahren",
+    "group": "SGB II Leistungen",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "relative"
+  },
+  {
+    "category": "sgb_anteil_an_der_bevoelkerung_ins_proz",
+    "value": "Anteil an der Bevölkerung der Leistungsempfänger/-innen insgesamt",
+    "group": "SGB II Leistungen",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "relative"
+  },
+  {
+    "category": "sgb_auslaendische_erwerbsf_leistungsempfaenger_anz",
+    "value": "Ausländische erwerbsfähige Leistungsempfänger/-innen nach SGB II",
+    "group": "SGB II Leistungen",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "absolute"
+  },
+  {
+    "category": "sgb_bedarfsgemeinschaften_anz",
+    "value": "Bedarfsgemeinschaften nach SGB II",
+    "group": "SGB II Leistungen",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "absolute"
+  },
+  {
+    "category": "sgb_erwerbsfaehige_lstempfaenger_anz",
+    "value": "Erwerbsfähige Leistungsempfänger/-innen nach SGB II",
+    "group": "SGB II Leistungen",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "absolute"
+  },
+  {
+    "category": "sgb_jugendl_lstempfaenger_15_bis_u25_anz",
+    "value": "Leistungsempfänger/-innen nach SGB II 15 bis unter 25 Jahren",
+    "group": "SGB II Leistungen",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "absolute"
+  },
+  {
+    "category": "sgb_leistungsempfaenger_anz",
+    "value": "Leistungsempfänger/-innen nach SGB II",
+    "group": "SGB II Leistungen",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "absolute"
+  },
+  {
+    "category": "sgb_nicht_erwebsf_lstempfaenger_u15_anz",
+    "value": "Nicht erwerbsfähige Leistungs-empfänger/-innen nach SGB II",
+    "group": "SGB II Leistungen",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "absolute"
+  },
+  {
+    "category": "gsa_anteil_bev_65_und_aelter_proz",
+    "value": "Anteil der Bevölkerung ab 65 Jahren",
+    "group": "Grundsicherung im Alter",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "relative"
+  },
+  {
+    "category": "gsa_empfaenger_grundsicherung_65_und_aelter_anz",
+    "value": "Empfänger von Grundsicherung und weiteren Hilfeleistungen ab 65 Jahre",
+    "group": "Grundsicherung im Alter",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "absolute"
+  },
+  {
+    "category": "wohn_mit_bindungsauslauf_anz",
+    "value": "Sozialwohnung mit Bindungsauslauf",
+    "group": "Wohnen",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "absolute"
+  },
+  {
+    "category": "wohn_sozialwohnungen_ins_anz",
+    "value": "Sozialwohnungen",
+    "group": "Wohnen",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "absolute"
+  },
+  {
+    "category": "wohn_wohngebaeude_anz",
+    "value": "Wohngebäude",
+    "group": "Wohnen",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "absolute"
+  },
+  {
+    "category": "wohn_wohnungen_in_wohn_und_nichtwohngebauede_anz",
+    "value": "Wohnungen in Wohn- und Nichtwohngebäuden",
+    "group": "Wohnen",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "absolute"
+  },
+  {
+    "category": "ver_anteil_pkw_schadstoffkl_4_bis_6_gruene_plakette_proz",
+    "value": "Anteil der PKW mit Schadstoffklasse 4 bis 6",
+    "group": "Verkehr",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "relative"
+  },
+  {
+    "category": "ver_gewerbl_pkw_anz",
+    "value": "Gewerbliche PKW",
+    "group": "Verkehr",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "absolute"
+  },
+  {
+    "category": "ver_pkw_bestand_ins_anz",
+    "value": "PKW Bestand",
+    "group": "Verkehr",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "absolute"
+  },
+  {
+    "category": "ver_private_pkw_anz",
+    "value": "Private PKW",
+    "group": "Verkehr",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "absolute"
+  },
+  {
+    "category": "ver_private_pkw_je_1000_EW_anz",
+    "value": "Private PKW je 1000 Einwohner",
+    "group": "Verkehr",
+    "statgebiet": true,
+    "stadtteil":true,
+    "valueType": "absolute"
+  }
+]

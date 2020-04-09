@@ -1,0 +1,76 @@
+<table class="table group">
+<% filteredTableView.forEach(function (group) { %>
+        <thead id="<%= group.group.replace(/\s/g, '') %>">
+                <tr>
+                        <th scope="col"><span><%= group.group %></span><button type="button" class="btn btn-outline-secondary open"><span></span></th>
+                        <% if (group.group !== "Gebietsinformation") { %>
+                                <th scope="col" class="years">
+                                        <span>Jahr</span>
+                                        <div class="move">
+                                                <span class="move-left glyphicon glyphicon-chevron-left" title="Spalte nach links verschieben"></span>
+                                                <span class="move-right glyphicon glyphicon-chevron-right" title="Spalte nach rechts verschieben"></span>
+                                        </div>
+                                        <span class="toggle-col glyphicon glyphicon-triangle-right"></span>
+                                </th>
+                        <% } else { %>
+                                <th></th>
+                        <% } %>
+                        <% for (var dist in _.values(group.values)[0]) { %>
+                                <th scope="col" 
+                                        style="text-align:right;" 
+                                        class="district <%= filteredTableView[0].values.Anmerkungen[dist] === 'Referenzgebiet' ? 'reference' : '' %>"
+                                        title="Über das Symbol in der Ecke Spalte ausblenden. Ausgeblendete Spalten werden bei Berechnungen ignoriert.">
+                                        <span class="col-title"><%= dist %></span>
+                                        <div class="move">
+                                                <span class="move-left glyphicon glyphicon-chevron-left" title="Spalte nach links verschieben"></span>
+                                                <span class="move-right glyphicon glyphicon-chevron-right" title="Spalte nach rechts verschieben"></span>
+                                        </div>
+                                        <span class="toggle-col glyphicon glyphicon-triangle-right"></span>
+                                </th>
+                        <% } %>
+                </tr>
+        </thead>
+        <tbody id="<%= group.group.replace(/\s/g, '') %>" class="<%= group.group === 'Berechnungen' || group.group === 'Gebietsinformation' ? 'open' : '' %>">
+        <% for (var val in group.values) { %>
+                <% if (Array.isArray(_.values(group.values[val])[0])) { %>
+                        <tr class="row has-context">
+                                <th class="prop" scope="row" title="<%= val %> - Für Aktionen rechtsklicken" id="<%= val %>">
+                                        <span class="select-row"><input type="checkbox" style="pointer-events: none;" title="Mehrere Spalten für gruppierte Balkendiagramme auswählen."></span>
+                                        <span class="prop-name"><%= val %></span>
+                                        <button type="button" class="btn btn-outline-secondary open"><span></span></button>
+                                </th>
+                                <td class="years timeline-table">
+                                        <ul class="list-group list-group-flush">
+                                                <% group.values[val][_.allKeys(group.values[val])[0]].forEach(function (val) { %>
+                                                        <li class="list-group-item nowrap"><small><%= val[0] %></small></li>
+                                                <% }) %>
+                                        </ul>
+                                </td>
+                                <% for (var dist in group.values[val]) { %>
+                                <td class="timeline-table">
+                                        <ul class="list-group list-group-flush">
+                                        <% group.values[val][dist].forEach(function (val) { %>
+                                                <li class="list-group-item nowrap">
+                                                        <span class="val"><%= isNaN(val[1]) ? val[1] : Number.isInteger(parseFloat(val[1])) ? parseFloat(val[1]).toLocaleString('de-DE') : parseFloat(val[1]).toLocaleString('de-DE') %></span>
+                                                        <!-- <small class="year">(<%= val[0] %>)</small> -->
+                                                </li>
+                                        <% }); %>
+                                        </ul>
+                                </td>
+                                <% } %>
+                        </tr>
+                <% } else { %>
+                        <tr class="row">
+                                <th class="prop" scope="row" title="<%= val %>" id="<%= val %>"><span class="prop-name"><%= val %></span></th>
+                                <td></td>
+                                <% for (var dist in group.values[val]) { %>
+                                        <td>
+                                                <span><%= group.values[val][dist] %></span>
+                                        </td>
+                                <% } %>
+                        </tr>
+                <% } %>
+        <% } %>
+        </tbody>
+<% }) %>
+</table>

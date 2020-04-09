@@ -1,0 +1,104 @@
+@color_avg: #e74d10;
+@color_dist: rgb(8, 88, 158);
+
+.dashboard-widget {
+    position: relative;
+    overflow: hidden;
+    margin: 5px;
+
+    &.minimized {
+        .win-control.open {
+            opacity: 0.6;
+            filter: alpha(opacity=0);
+        }
+        #content {
+            display: none;
+        }
+    }
+    &.dragging {
+        cursor: grabbing;
+        background: rgba(0, 0, 255, 0.05);
+    }
+    .win-control {
+        padding: 0;
+        cursor: pointer;
+        background: transparent;
+        border: 0;
+        -webkit-appearance: none;
+        appearance: none;
+        float: right;
+        font-size: 21px;
+        font-weight: bold;
+        line-height: 1;
+        color: #000;
+        text-shadow: 0 1px 0 #fff;
+        filter: alpha(opacity=20);
+        opacity: 0.2;
+        margin-left: 5px;
+    }
+
+    .header {
+        cursor: grab;
+        &:hover {
+            background: rgba(0, 0, 255, 0.05);
+        }
+    }
+    
+    .detail-view-container {
+        padding: 8px 15px;
+        width: 100%;
+        border-bottom: 1px solid rgb(229, 229, 229);
+        .dashboard-graph {
+            width:100%;
+            height:40vh;
+        }
+        .graphTooltip {
+            position: fixed;
+            pointer-events: none;
+        }
+    }
+    
+    .svg-container {
+        width: 100%;
+        height:100%;
+        position: relative;
+        svg {
+            overflow: visible !important;
+        }
+    }
+
+    div.drag {
+        position: absolute;
+        bottom:5px;
+        right:5px;
+        width: 15px;
+        height: 15px;
+        opacity: 0.6;
+        filter: alpha(opacity=0);
+        &:hover {
+            opacity: 0.9;
+            filter: alpha(opacity=0);
+            cursor: grab;
+        }
+    }
+
+    .buffer {
+        height:20px;
+    }
+
+    .widget-shadow {
+        position: fixed;
+        display: block;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        background: rgba(0, 0, 0, 0.02);
+        display:none;
+        &.dragging {
+            display:block;
+        }
+    }
+}
+

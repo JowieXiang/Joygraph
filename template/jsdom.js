@@ -3,7 +3,7 @@ const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 const dom = new JSDOM();
 const path = require('path');
-const data = require('../src/parsedoc');
+const data = require('../src/parse');
 
 global.window = dom.window;
 global.document = window.document;
@@ -69,7 +69,9 @@ function getHtml2(xml, title, redirect) {
     var data = { highlight: '#0000ff', nav: foldingEnabled, resize: false, xml: xml, toolbar: '' };
 
     var style = 'max-width:100%;border:1px solid transparent;';
-
+    
+    
+    // 生成完整的html
     return ((redirect == null) ? '<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=5,IE=9" ><![endif]-->\n' : '') 
         +
         '<!DOCTYPE html>\n<html' 

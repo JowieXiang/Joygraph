@@ -1,6 +1,4 @@
-const doclets = require('../testcode/doclets.json')
-
-module.exports = function () {
+exports.parse = function (doclets) {
     // 给doclets分类
     const functions = doclets.filter(d => d.kind === 'function');
     const members = doclets.filter(d => d.kind === 'member');

@@ -1,0 +1,58 @@
+.calculate-ratio {
+    .tool-info {
+        display: flex;
+        div:not(:first-child) {
+            margin-left:5px;
+        }
+    }
+    .help {
+        float: right;
+    }
+    #facilities-info {
+        color: darkred;
+    }
+    .table, #submit {
+        margin-top: 10px;
+    }
+    .table td {
+        text-align: right;
+    }
+    .message {
+        color: red;
+    }
+    .table {
+        th {
+            border-bottom: none;
+        }
+        td {
+            position: relative;
+            .inline-tag {
+                position: absolute;
+                top: 25%;
+                right: 15px;
+                padding-top:2px;
+            }
+        }
+    }
+
+    .result-buttons {
+        margin-top: 5px;
+
+        #export-button, #push-dashboard-button {
+            display: inline-block;
+            .measure-delete {
+                margin-bottom: 0;
+            }
+        }
+    }
+    
+    .result {
+        .heading {
+            margin-top:20px;
+        }
+
+        .table th {
+            border-bottom: 1px solid #ddd;
+        }
+    }
+}

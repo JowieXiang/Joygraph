@@ -1,0 +1,55 @@
+input[type=range]::-ms-track {
+    /*example */
+    width       : 100px;
+    height      : 10px;
+    background  : transparent;
+    border-color: transparent;
+    border-width: 6px 0;
+    color       : transparent;
+}
+
+input[type=range] {
+    padding: 0;
+    margin : 0;
+}
+
+input[type=range]::-ms-fill-upper {
+    background   : gray;
+    border-radius: 6px;
+}
+
+input[type=range]::-ms-fill-lower {
+    background   : gray;
+    border-radius: 6px;
+}
+
+.slider-value {
+    visibility      : hidden;
+    background-color: #FFFFFF;
+    color           : black;
+    text-align      : center;
+    border-radius   : 6px;
+    padding         : 2px 5px;
+    box-shadow      : rgba(0, 0, 0, 0.3) 0px 1px 2px 0px;
+    /* Position the tooltip */
+    position: absolute;
+    z-index : 1;
+}
+
+.sliderdiv {
+    position: relative;
+    display : inline-block;
+}
+
+.sliderdiv:hover .slider-value {
+    visibility: visible;
+}
+
+#lowerTolerance,
+#upperTolerance {
+    width: 40px;
+}
+
+table {
+    margin: 0px;
+}

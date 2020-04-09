@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<% if (message !== "") { %>
+    <div class="message"><%=message%></div>
+<% }
+else { %>
+    <% if (Object.getOwnPropertyNames(results).length > 0) { %>
+        <div class="heading">Versorgungschlüssel<br />(<%= numerators.values[0] %> pro <%= resolution %> <%= denominators.values.join(', ') %>):</div>
+        <table class="table">
+            <tr>
+                <th scope="col">Gebiet</th>
+                <th scope="col" title="Die Gesamtzahl der Einrichtungen bzw. des gewählten Parameters der Einrichtungen im Gebiet (z.B. m² Spielplatz)"><%= numerators.values[0] %> (<%= modifier[0] %>)</th>
+                <th scope="col" title="Die Zahl der Personen der (kombinierten) Zielgruppe im Gebiet"><%= denominators.values.join(', ') %></th>
+                <% if (isModified) { %>
+                    <th scope="col" title="Die Zahl der Personen, die die Einrichtungen versorgen können, gemäß Faktor F">Kapazität</th>
+                    <th scope="col" title="Der Wert des Parameters der Einrichtungen, die für die Zahl an Personen im Gebiet notwendig wäre, gemäß Faktor F">Bedarf (Soll-Wert)</th>
+                <% } %>
+                <th scope="col" title="Das einfache Verhältnis zwischen Einrichtungen (Zahl oder Parameter) und (kombinierter) Zielgruppe im Gebiet"><%= modifier[0] %> / Bezugsgröße</th>
+                <th scope="col" title="Die Versorgungsabdeckung in Prozent, d.h. das Verhältnis zwischen Kapazität und (kombinierter) Zielgruppe im Gebiet">Unter- / Überversorgung (%)</th>
+            </tr>
+            <% for (var district in results) { %>
+                <tr>
+                    <th scope="row"><%= district %></th>
+                    <td><%= results[district].facilities.toLocaleString('de-DE') %></td>
+                    <td><%= results[district].demographics.toLocaleString('de-DE') %></td>
+                    <% if (isModified) { %>
+                        <td><%= results[district].capacity.toLocaleString('de-DE') %></td>
+                        <td><%= results[district].demand.toLocaleString('de-DE') %></td>
+                    <% } %>
+                    <td><%= results[district].ratio.toLocaleString('de-DE') %></td>
+                    <td><%= results[district].coverage.toLocaleString('de-DE') %> %</td>
+                </tr>
+            <% } %>
+        </table>
+        <div class="btn-group result-buttons">
+            <div id="export-button"></div>
+            <div id="push-dashboard-button">
+                <button type="button" class="btn btn-lgv-grey measure-delete" id="push-dashboard">
+                    Im Dashboard anzeigen
+                </button>
+            </div>
+        </div>
+    <% } %>
+<% } %>

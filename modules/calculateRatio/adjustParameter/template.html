@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<h4><%= layerName %></h4>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col" id="param-label" title="Parameter wählen, s. Info">Parameter wählen</th>
+            <th class="modifier <%= isModified ? '' : 'hidden' %>" scope="col" id="modifier-label">Faktor (F)</th>
+            <!-- <th class="modifier hidden" scope="col" id="operator-label">Operator</th> -->
+            <th>
+                <div id="help">
+                    <span class="glyphicon glyphicon-question-sign"></span>
+                </div>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <select class="form-control custom-select" id="parameter-select">
+                    <option value="<%= selectedOption[0] %>"><%= selectedOption[0] === "count" ? "Anzahl" : selectedOption[0] %></option>
+                    <% _.each(numericalValues, function (value) { %>
+                        <option value="<%= value %>"><%= value %></option>
+                    <% }) %>
+                </select>
+            </td>
+            <td class="modifier <%= isModified ? '' : 'hidden' %>" title="Hier können Sie auswählen, wieviel des Parameters pro Person gebraucht wird.">
+                <% if (!isMS) { %>
+                    <input class="form-control" type="number" value="<%= initValue %>" placeholder="<%= initValue.toFixed(2) %>" id="modifier-input" step="<%= step %>">
+                <% } else { %>
+                    <input class="form-control" type="text" value="<%= initValue %>" placeholder="<%= initValue.toFixed(2) %>" id="modifier-input">
+                <% } %>
+            </td>
+            <td class="hidden">
+                <select class="form-control" id="operator" title="Rechenoperator für die Gewichtung wählen">
+                    <option value="/" title="Dividieren - Bsp.: '1 Schüler braucht 5qm Sportplatzfläche'">/</option>
+                    <option value="*" title="Multiplizieren - Bsp.: '1 Lehrer kann 20 Schüler betreuen'">x</option>
+                </select>
+            </td>
+            <td>
+                <button class="btn btn-lgv-grey modifier <%= isModified ? 'hidden' : '' %>" id="toggle-modifier">Faktor (F) hinzufügen</button>
+                <button class="btn btn-lgv-grey modifier <%= isModified ? '' : 'hidden' %>" id="toggle-modifier">Faktor (F) entfernen</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,13 @@
+<div id="results">
+    <div class="text">Filterergebnis</div>
+    <p>
+        <% _.each(features, function(feature){ %>
+        <span class="name-tag district-name zoom-to-coord" coord="<%= feature.get('coord').join(',') %>">
+            <%= feature.getProperties()[selector1] ? feature.getProperties()[selector1] : feature.getProperties()[selector2] %>
+        </span>
+        <% }) %>
+    </p>
+</div>
+<button type="button" class="btn btn-lgv-grey measure-delete" id="show-in-dashboard">
+    Im Dashboard anzeigen
+</button>

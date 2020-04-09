@@ -1,0 +1,22 @@
+<div>
+        <span>Bitte wählen Sie einen Bezugsrahmen aus:</span>
+    <table>
+        <tr>
+            <td><small>Bezugsrahmen</small></td>
+            <td><small>Puffer (in m)</small></td>
+        </tr>
+        <tr>
+            <td><div class="dropdown"></div></td>
+            <td><input class="form-control col-xs-2" type="number" value="<%= buffer.toLocaleString('de-DE') %>" id="buffer" step="250" min="0"></td>
+        </tr>
+    </table>
+    <span>Klicken Sie in der Karte auf ein oder mehrere Gebiete, um Ihr Planungsgebiet zu bestimmen.</span><br>
+    <span>Anschließend bestätigen Sie Ihre Auswahl mit einem Klick auf den Button "Auswahl bestätigen"</span>
+</div>
+<br>
+<div id="submit-btn">
+    <button type="button" class="btn btn-lgv-grey col-xs-5" id="Submit">Auswahl bestätigen</button>
+    <button type="button" class="btn btn-lgv-grey col-xs-5" id="Reset">Auswahl zurücksetzen</button>
+    <button type="button" class="btn btn-lgv-grey col-xs-1" id="Draw" title="Auswahlrechteck zeichnen"><span class="glyphicon glyphicon-pencil"></span></button>
+    <button type="button" class="btn btn-lgv-grey col-xs-1" id="Help" title="Info"><span class="glyphicon glyphicon-question-sign"></span></button>
+</div>

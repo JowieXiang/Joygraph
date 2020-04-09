@@ -1,0 +1,47 @@
+<div>
+    <li class="group">
+        Diagramme
+        <span class="info glyphicon glyphicon-question-sign"
+            title="Diagramme aus dem ausgewählten Datensatz erstellen. Balkendiagramme können auch für mehrere Indikatoren als gruppierte Balkendiagramme erstellt werden. Die Ergebnisse werden unten im Dashboard dargestellt.">
+        </span>
+    </li>
+    <li id="barChart" class="has-sub-menu">
+        Balkendiagramm erstellen
+        <ul class="sub-menu" id="barChart">
+            <li id="input-year" class="has-input">
+                <button class="btn btn-default">Erstellen für</button>
+                <input type="text" maxlength="4" value="2018" />
+            </li>
+        </ul>
+    </li>
+    <li id="lineChart" class="has-sub-menu">
+        Liniendiagramm erstellen
+        <ul class="sub-menu" id="lineChart">
+            <li id="unscaled">Unskalierte Achsen</li>
+            <li id="scaled">Skalierte Achsen</li>
+        </ul>
+    </li>
+    <li id="timeline">Zeitstrahl erstellen</li>
+    <li class="group">
+        Auswahl
+        <span class="info glyphicon glyphicon-question-sign"
+            title="Wählen Sie zwei Datensätze für die Bildung von Verhältnissen/Korrelationen. Die getätigte Auswahl wird über der Tabelle und bei 'Eigene Berechnungen' angezeigt.">
+        </span>
+    </li>
+    <li id="numerator">Als Zähler (Y-Achse) hinzufügen</li>
+    <li id="denominator">Als Nenner (X-Achse) hinzufügen</li>
+    <li id="delete-selection" title="Löscht die aktuelle Auswahl">Auswahl aufheben</li>
+    <li class="group" id="selection">
+        Eigene Berechnungen
+        <span class="selected" style="font-weight: 300;"></span>
+        <span class="info glyphicon glyphicon-question-sign" title="Berechnungen aus der vorangegangenen Auswahl erstellen. Bei Verhältnissen werden alle Jahre der Zähler- durch die Nennerwerte geteilt. Bei Korrelationsdiagrammen die Y-Werte aller Jahre über den x-Werten aufgetragen."></span>
+    </li>
+    <li id="ratio" class="calculate">Verhältnis berechnen</li>
+    <li id="correlation" class="calculate has-sub-menu">
+        Korrelationsdiagramm erstellen
+        <ul class="sub-menu" id="calculate">
+            <li id="unscaled">Unskalierte Achsen</li>
+            <li id="scaled">Skalierte Achsen</li>
+        </ul>
+    </li>
+</div>;

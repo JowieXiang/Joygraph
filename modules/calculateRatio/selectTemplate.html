@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<div class="calculate-ratio">
+    <div class="tool-info">
+        <div>
+            Mit der Versorgungsanalyse können Sie die Abdeckung eines Gebietes mit einem bestimmten Einrichtungstyp / Infrastruktur ermitteln (s. "Themen").
+        </div>
+        <div id="help" class="help">
+            <span class="glyphicon glyphicon-question-sign"></span>
+        </div>
+        <div id="clear" title="clear current result">
+            <span class="glyphicon glyphicon-trash"></span>
+        </div>
+    </div>
+    <div class="numDropdown" title="Sie können nur einen Einrichtungstyp gleichzeitig auswählen."></div>
+    <small id="facilities-info">Bitte wählen Sie zuerst ein Thema aus dem Themenbaum.</small>
+    <div class="denDropdown" title="Sie können beliebig viele Zielgruppen auswählen. Deren Werte werden im Gebiet addiert (z.B. Kinder unter 6, Kinder 6-10)"></div>
+    <div class="toggleMulti"></div>
+    <div class="modifiers"></div>
+    <div class="hidden" id="resolution-input-container">
+        <h4 id="den-name"></h4>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col" title="Maßstab festlegen, s. Info">berechnen pro</th>
+                    <th>
+                        <div id="help-resolution" class="help">
+                            <span class="glyphicon glyphicon-question-sign"></span>
+                        </div>
+                    </th>
+                </tr>
+                <tbody>
+                    <tr>
+                        <td><input class="form-control" type="text" value="1" id="resolution-input" step="1" min="1"></td><td><span class="inline-tag">der Bezugsgröße</span></td>
+                    </tr>
+                </tbody>
+            </thead>
+        </table>
+    </div>
+    <button id="submit" class="btn btn-primary btn-md btn-block">Berechnen</button>
+    <div class="result"></div>
+</div>

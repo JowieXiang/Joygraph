@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<div id="filter-panel">
+    <button type="button" class="close" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <h6>
+        <strong><%= layerInfo.layerText.value %></strong>
+    </h6>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col" id="year">Jahr</thid>
+                <th scope="col" id="minmax">min.</th>
+                <th scope="col" id="minmax">max.</th>
+                <th scope="col" id="reference">Referenzwert</th>
+                <th scope="col" id="tolerance">Toleranz</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% _.each( districtInfo, function (info) { %>
+            <tr>
+                <td><%= info.key %></td>
+                <td><%= info.min %></td>
+                <td><%= info.max %></td>
+                <td><input value="<%= info.value %>" class="reference-value-input" id="<%= info.key %>"></input></td>
+                <td id="<%= info.key %>-td"></td>
+            </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</div>
+<br />

@@ -1,26 +1,41 @@
-/**
- * 之后要替代成child-process-then
- */
-const { exec } = require("child_process"),
+
+var exec = require('child_process').exec,
     fs = require('fs'),
     path = require("path"),
-    pathToJsDocCmd = path.resolve(__dirname, "../node_modules/.bin/jsdoc");
-
-
-exec(pathToJsDocCmd + " -X -c config/jsdoc-doclet.json", {}, (err, stdout, stderr) => {
-    // console.log(stdout);
-    fs.writeFile('testcode/doclets.json', stdout, function (err) {
-        if (err) return console.log(err);
-        console.log('Hello World > helloworld.txt');
-    });
-});
+    pathToJsDocCmd = path.resolve(__dirname, "../node_modules/.bin/jsdoc"),
+    confpath = path.resolve(__dirname, "config/jsdoc-doclet.json");
+const { parse } = require('../src/parse');
+const { createGraph, graphToHTML } = require('./draw');
+const output = path.resolve(__dirname, 'graph.html');
 
 /**
- * 得到JSON之后
- * then进行parse
- * 再之后JsDom得到html
- * 最后生成.html文件
+ * promisify child process
  */
+new Promise((resolve, reject) => {
+    exec(pathToJsDocCmd + " -X -c " + confpath, {maxBuffer: 2048 * 2048}, (err, stdout, stderr) => {
+        if (err) {
+            reject(Error(err));
+        }
+        resolve(stdout ? stdout : stderr);
+    })
+
+})
+    // parse result to JSON
+    .then(res => JSON.parse(res))
+    // create mxGraph and write to file
+    .then((res) => {
+        const data = parse(res);
+        const graph = createGraph(data);
+        const html = graphToHTML(graph);
+        fs.writeFileSync(output, html, 'utf8');
+    })
+    .catch(err => {
+        console.log(err);
+    })
+
+
+
+
 
 process.on("unhandledRejection", function (error) {
     throw new Error(error);

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<div class="dashboard-inner" id="dashboard-print">
+        <div class="btn-group header">
+                <span class="glyphicon <%=glyphicon%>"></span>
+                <span class="tool-name"><%= name %></span>
+                <% if (isVisibleInMenu === true) { %>
+                        <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <% } %>
+                <button type="button" class="btn btn-lgv-grey col-xs-1" id="help"><span class="glyphicon glyphicon-question-sign"></span></button>
+        </div>
+        <div id="dashboard-containers"></div>
+        <div class="btn-group dashboard-footer">
+                <div id="print-button"></div>
+                <button id="reset-button" class="btn btn-primary"><span class="glyphicon glyphicon-trash"></span>Dashboard zurücksetzen</button>
+        </div>
+        <div class="dashboard-tooltip"></div>
+</div>

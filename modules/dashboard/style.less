@@ -1,0 +1,94 @@
+@color_1: #fff;
+@font_family_1: "UniversNextW04-620CondB","Arial Narrow",Arial,sans-serif;
+@background_color_1: rgba(0, 0, 0,.5);
+
+.sidebar .header, .sidebar .dashboard-footer, .dashboard-inner .header, .dashboard-inner .dashboard-footer {
+    width: 100%;
+    border-bottom: 1px solid rgb(229,229,229);
+    padding: 10px;
+}
+.dashboard {
+    overflow: hidden;
+    .drag-bar {
+        position:absolute;
+        display: inline-block;
+        height: calc(100vh - 50px);
+        line-height: calc(100vh - 50px);
+        vertical-align: top;
+        width:20px;
+        text-align: center;
+        font-size: 24px;
+        border-right: 1px solid #fafafa;
+        cursor: grab;
+        &:hover {
+            background: rgb(250, 250, 250);
+        }
+        &.dragging {
+            cursor:grabbing;
+        }
+    }
+    .dashboard-inner {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        .header, .dashboard-footer {
+            button#help {
+                float: right;
+                border: none;
+                width: auto;
+                padding: 0;
+                opacity: 0.6;
+            }
+            div#print-button {
+                float: left;
+            }
+            button {
+                margin-right: 4px;
+                span.glyphicon {
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+
+    .dashboard-tooltip {
+        position: fixed;
+        padding: 5px;
+        pointer-events: none;
+        table {
+            width: auto;
+            margin:0;
+            th, td {
+            width: auto;
+            padding: 0 5px;
+            max-width: 210px;
+            vertical-align: top;
+            &:not(:last-child) {
+                border-right: 1px solid grey;
+            }
+            }
+            th {
+                text-align: left;
+            }
+            td {
+                text-align: right;
+            }
+        }
+    }
+
+    #dashboard-containers {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+#info-screen {
+    .drag-bar {
+        display: none;
+    }
+    .dashboard-inner > .header > .close {
+        display: none;
+    }
+}
+
+   
