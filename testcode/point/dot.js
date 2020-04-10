@@ -1,7 +1,9 @@
+
 // import Point from './point'
 /**
  * Class representing a dot. Requires the modules 
  * {@link module:Point}
+ * @memberof MyNamespace
  * @requires module:Point
  * @extends Point
  */

@@ -3,7 +3,13 @@ const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 const dom = new JSDOM();
 const path = require('path');
-const data = require('../src/parse');
+const style = {
+    stack: "rounded=1;fontColor=black;fillColor=white;strokeWidth=0;strokeColor=white;fontStyle=1",
+    ns: "rounded=1;fontColor=black;fillColor=#414F66;strokeWidth=0;strokeColor=white;fontStyle=1;fontSize=20",
+    cls: "rounded=1;fontColor=black;fillColor=#A0A6B7;strokeWidth=0;strokeColor=white;fontStyle=1;fontSize=15",
+    ft: "rounded=1;fontColor=black;fillColor=#EAF1F3;strokeWidth=0;strokeColor=white;fontStyle=1;fontSize=12",
+    ed: "strokeWidth=3;startArrow=oval;endArrow=oval;strokeColor=#323232"
+}
 
 /**
  * set up JsDOM environment
@@ -29,20 +35,24 @@ const mxgraph = require(viewerModulePath)({
 
 const { mxGraphModel, mxStackLayout, mxSwimlaneManager, mxEdgeStyle, mxLayoutManager, mxPoint, mxRubberband, mxGraph, mxCodec, mxUtils, mxSwimlaneLayout, mxHierarchicalLayout, mxCompactTreeLayout, mxConstants, mxPerimeter } = mxgraph;
 
-exports.createGraph = function () {
+
+exports.createGraph = function (data) {
 
     // Creates the graph inside the given container
     var graph = new mxGraph();
+    graph.autoSizeCellsOnAdd = true;
+
+
 
     // Enables rubberband selection
     new mxRubberband(graph);
 
     var layout = new mxStackLayout(graph, false);
     layout.resizeParent = true;
-    // 是否充满整个parent
-    layout.fill = false;
-    layout.wrap = 600;
+
+    layout.wrap = 1024;
     layout.spacing = 50;
+
 
 
     // Keeps the lanes and pools stacked
@@ -50,23 +60,18 @@ exports.createGraph = function () {
 
 
     var hlayout = new mxHierarchicalLayout(graph);
-    
+
     var model = graph.getModel();
 
     layoutMgr.getLayout = function (cell) {
-        console.log(cell.id);
-        // console.log(model.isEdge(cell));
-        // console.log(graph.getModel().getChildCount(cell) > 0);
-        // console.log(model.getParent(cell) == model.getRoot());
-
 
         if (!model.isEdge(cell) && graph.getModel().getChildCount(cell) > 0 &&
             (model.getParent(cell) == model.getRoot())) {
-
             return layout;
         }
-
-        return new mxHierarchicalLayout(graph);
+        const treeLayout =  new mxCompactTreeLayout(graph);
+        treeLayout.groupPadding = 100;
+        return treeLayout;
     };
 
     // Gets the default parent for inserting new cells. This
@@ -74,35 +79,79 @@ exports.createGraph = function () {
     var parent = graph.getDefaultParent();
 
     // Adds cells to the model in a single step
+
     graph.getModel().beginUpdate();
     try {
-        var block0 = graph.insertVertex(parent, 'block0', 'Hello,', 20, 20, 80, 30);
-        var w1 = graph.insertVertex(block0, 'w1', 'World1', 200, 150, 80, 30);
-        var w2 = graph.insertVertex(block0, 'w2', 'world2', 200, 150, 80, 30);
-        var w3 = graph.insertVertex(block0, 'w3', 'world2', 200, 150, 80, 30);
-        var e2 = graph.insertEdge(block0, 'e2', '', w1, w3);
-        var e1 = graph.insertEdge(block0, 'e1', '', w1, w2);
-        var block1 = graph.insertVertex(parent, 'block1', 'Hello,', 20, 20, 80, 30);
-        var _w1 = graph.insertVertex(block1, '_w1', '1', 200, 150, 80, 30);
-        var _w2 = graph.insertVertex(block1, '_w2', '2', 200, 150, 80, 30);
-        var _w3 = graph.insertVertex(block1, '_w3', '3', 200, 150, 80, 30);
-        var _e2 = graph.insertEdge(block1, '_e2', '', _w1, _w3);
-        var _e1 = graph.insertEdge(block1, '_e1', '', _w1, _w2);
+        /**
+         * generate all vertices
+         */
 
-        var block2 = graph.insertVertex(parent, null, 'Hello,', 20, 20, 80, 30);
-        var __w1 = graph.insertVertex(block2, '__w1', '4', 200, 150, 80, 30);
-        var __w2 = graph.insertVertex(block2, '__w2', '5', 200, 150, 80, 30);
-        var __w3 = graph.insertVertex(block2, '__w3', '6', 200, 150, 80, 30);
-        var __e2 = graph.insertEdge(block2, '__e2', '', __w1, __w3);
-        var __e1 = graph.insertEdge(block2, '__e1', '', __w1, __w2);
-        var __e3 = graph.insertEdge(parent, '__e3', '', w1, __w2);
+        let nsVts = {},
+            classVts = {},
+            functionVts = {},
+            edges = {};
+
+        for (let d = 0; d < data.length; d++) {
+            const ns = data[d];
+            // create namespace stacks
+            nsVts[ns.longname + '_stack'] = graph.insertVertex(parent, ns.longname + '_stack', null, 200, 150, 0, 0, style.stack);
+            nsVts[ns.longname] = graph.insertVertex(nsVts[ns.longname + '_stack'], ns.longname, ns.longname, 200, 150, 300, 100, style.ns);
+
+            for (let c = 0; c < ns.classes.length; c++) {
+                const cls = ns.classes[c];
+                classVts[cls.longname] = graph.insertVertex(nsVts[ns.longname + '_stack'], cls.name, cls.name, 200, 150, 200, 80, style.cls);
+                edges[cls.longname + '_stack'] = graph.insertEdge(nsVts[ns.longname + '_stack'], null, '', nsVts[ns.longname], classVts[cls.longname], style.ed);
+
+                for (let f = 0; f < cls.functions.length; f++) {
+                    const ft = cls.functions[f];
+                    functionVts[ft.longname] = graph.insertVertex(nsVts[ns.longname + '_stack'], ft.name, ft.name, 200, 150, 120, 60, style.ft);
+                    edges[f.longname] = graph.insertEdge(nsVts[ns.longname + '_stack'], null, '', classVts[cls.longname], functionVts[ft.longname], style.ed);
+                }
+            }
+            // create connection of inheritance
+            for (const c in ns.classes) {
+                const cls = ns.classes[c];
+                if (cls.augments) {
+                    /**
+                     * not stable. the augments field is an array
+                     */
+                    edges[cls.longname] = graph.insertEdge(nsVts[ns.longname + '_stack'], null, '', classVts[cls.longname], classVts[cls.memberof + '.' + cls.augments[0]], style.ed);
+                }
+            }
+        }
+        // var block0 = graph.insertVertex(parent, 'block0', 'Hello,', 20, 20, 80, 30);
+        // var w1 = graph.insertVertex(block0, 'w1', 'World1', 200, 150, 80, 30);
+        // var w2 = graph.insertVertex(block0, 'w2', 'world2', 200, 150, 80, 30);
+        // var w3 = graph.insertVertex(block0, 'w3', 'world2', 200, 150, 80, 30);
+        // var w4 = graph.insertVertex(block0, 'w4', 'world4', 200, 150, 80, 30);
+        // var w5 = graph.insertVertex(block0, 'w5', 'world5', 200, 150, 80, 30);
+        // var e2 = graph.insertEdge(block0, 'e2', '', w1, w3);
+        // var e1 = graph.insertEdge(block0, 'e1', '', w1, w2);
+        // var e3 = graph.insertEdge(block0, 'e3', '', w2, w4);
+        // var e4 = graph.insertEdge(block0, 'e4', '', w2, w5);
+        // var e5 = graph.insertEdge(block0, 'e4', '', w1, w5);
+
+
+        // var block1 = graph.insertVertex(parent, 'block1', 'Hello,', 20, 20, 80, 30);
+        // var _w1 = graph.insertVertex(block1, '_w1', '1', 200, 150, 80, 30);
+        // var _w2 = graph.insertVertex(block1, '_w2', '2', 200, 150, 80, 30);
+        // var _w3 = graph.insertVertex(block1, '_w3', '3', 200, 150, 80, 30);
+        // var _e2 = graph.insertEdge(block1, '_e2', '', _w1, _w3);
+        // var _e1 = graph.insertEdge(block1, '_e1', '', _w1, _w2);
+
+        // var block2 = graph.insertVertex(parent, null, 'Hello,', 20, 20, 80, 30);
+        // var __w1 = graph.insertVertex(block2, '__w1', '4', 200, 150, 80, 30);
+        // var __w2 = graph.insertVertex(block2, '__w2', '5', 200, 150, 80, 30);
+        // var __w3 = graph.insertVertex(block2, '__w3', '6', 200, 150, 80, 30);
+        // var __e2 = graph.insertEdge(block2, '__e2', '', __w1, __w3);
+        // var __e1 = graph.insertEdge(block2, '__e1', '', __w1, __w2);
+        // var __e3 = graph.insertEdge(parent, '__e3', '', w1, __w2);
 
         // var _hello = graph.insertVertex(parent, null, 'Hello,', 400, 20, 80, 30);
         // var _w1 = graph.insertVertex(_hello, null, 'World1', 400, 150, 80, 30);
         // var _w2 = graph.insertVertex(_hello, null, 'world2', 400, 150, 80, 30);
         // var _e1 = graph.insertEdge(_hello, null, '', _w1, _w2);
 
-        // layout.execute(parent);
 
     }
     finally {
@@ -227,7 +276,7 @@ function getHtml2(xml, title, redirect) {
         +
         ((redirect != null) ? '<meta http-equiv="refresh" content="0;URL=\'' + redirect + '\'"/>\n' : '')
         +
-        '<meta charset="utf-8"/>\n</head>\n<body>'
+        '<meta charset="utf-8"/>\n</head>\n<body style="background-color:white">'
         +
         '\n<div class="mxgraph" style="' + style + '" data-mxgraph="' + mxUtils.htmlEntities(JSON.stringify(data)) + '"></div>\n' +
         ((redirect == null) ? '<script type="text/javascript" src="' + js + '"></script>' :

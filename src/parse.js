@@ -1,17 +1,22 @@
+
+const _ = require('lodash');
+
 exports.parse = function (doclets) {
     // 给doclets分类
-    const functions = doclets.filter(d => d.kind === 'function');
-    const members = doclets.filter(d => d.kind === 'member');
-    const classes = doclets.filter(d => d.kind === 'class');
-
+    const functions = doclets.filter(d => d.kind === 'function'),
+        members = doclets.filter(d => d.kind === 'member'),
+        // classes = doclets.filter(d => d.kind === 'class' && d.classdesc && d.description),
+        classes = doclets.filter(d => d.kind === 'class'),
+        namespaces = doclets.filter(d => d.kind === 'namespace');
 
     // 得到最终的object
-    let sortData = {};
-    sortData = classes.filter((d) => d.classdesc && d.description);
-    // console.log(sortData.map(d => d.name));
-    sortData.forEach((d) => {
-        d.functions = functions.filter(f => f.memberof === d.name);
+    let sortData = namespaces;
+    sortData.forEach((ns) => {
+        ns.classes = classes.filter(c => c.memberof === ns.longname);
+        ns.classes.forEach((c) => {
+            c.functions = functions.filter(f => f.memberof === c.longname);
+        })
     })
+    // console.log(JSON.stringify(sortData));
     return sortData;
 }
-// console.log(sortData[0].functions.map(f => f.name) , sortData[1].functions.map(f => f.name));

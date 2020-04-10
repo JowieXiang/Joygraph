@@ -1,4 +1,12 @@
-/** Class representing a point. */
+/**
+ * A namespace.
+ * @namespace MyNamespace
+ */
+
+/** 
+ * Class representing a point. 
+ * @memberof MyNamespace
+ */
 class Point {
     /**
      * Create a point.

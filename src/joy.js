@@ -21,7 +21,12 @@ new Promise((resolve, reject) => {
 
 })
     // parse result to JSON
-    .then(res => JSON.parse(res))
+    .then(res => {
+        fs.writeFileSync(path.resolve(__dirname, 'parse.json'), res, 'utf8');
+        // console.log(res);
+
+        return JSON.parse(res)
+    })
     // create mxGraph and write to file
     .then((res) => {
         const data = parse(res);
