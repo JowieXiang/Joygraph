@@ -1,0 +1,53 @@
+{
+    "cell": {
+        "block": {
+            "geo": [
+                200,
+                150,
+                0,
+                0
+            ],
+            "stl": "rounded=1;fontColor=black;fillColor=white;strokeWidth=0;strokeColor=white;fontStyle=1"
+        },
+        "namespace": {
+            "geo": [
+                200,
+                150,
+                300,
+                100
+            ],
+            "stl": "rounded=1;fontColor=black;fillColor=#414F66;strokeWidth=0;strokeColor=white;fontStyle=1;fontSize=20"
+        },
+        "class": {
+            "geo": [
+                200,
+                150,
+                200,
+                80
+            ],
+            "stl": "rounded=1;fontColor=black;fillColor=#A0A6B7;strokeWidth=0;strokeColor=white;fontStyle=1;fontSize=15"
+        },
+        "function": {
+            "geo": [
+                200,
+                150,
+                120,
+                60
+            ],
+            "stl": "rounded=1;fontColor=black;fillColor=#EAF1F3;strokeWidth=0;strokeColor=white;fontStyle=1;fontSize=12"
+        },
+        "edge": {
+            "stl": "strokeWidth=3;startArrow=oval;endArrow=oval;strokeColor=#323232"
+        }
+    },
+    "layout": {
+        "mxStackLayout": {
+            "resizeParent": true,
+            "wrap": 1024,
+            "spacing": 50
+        },
+        "mxCompactTreeLayout": {
+            "groupPadding": 100
+        }
+    }
+}

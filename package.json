@@ -1,6 +1,6 @@
 {
   "name": "Joy",
-  "version": "1.0.0",
+  "version": "0.9.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -11,8 +11,12 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bin": {
+    "joy": "./bin/joy"
+  },
   "dependencies": {
     "child-process-promise": "^2.2.1",
+    "commander": "^5.0.0",
     "jaguarjs-jsdoc": "^1.1.0",
     "jsdoc": "^3.6.3",
     "jsdom": "^16.2.2",

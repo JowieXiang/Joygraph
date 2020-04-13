@@ -1,0 +1,32 @@
+#!/usr/bin/env node
+const program = require('commander'),
+  pkg = require('../package'),
+  joy = require('..');
+
+program
+  .version(pkg.version)
+  .command('build')
+  .description('creates the joy diagram')
+  .alias('b')
+  .action(function () {
+    console.log('using default configuration to create diagram...');
+    joy.build();
+  });
+
+program
+  // .option('-i \<dir\>', 'input directory')
+  // .option('-o \<dir\>', 'output directory')
+  .option('-d, --debug', 'output parsed JsDoc doclets for debugging');
+
+program.on('--help', function () {
+  console.log('');
+  console.log('  Examples:');
+  console.log('');
+  console.log('    # build');
+  console.log('    $ joy build');
+  console.log('');
+});
+
+program.parse(process.argv);
+
+// process.exit(0);
